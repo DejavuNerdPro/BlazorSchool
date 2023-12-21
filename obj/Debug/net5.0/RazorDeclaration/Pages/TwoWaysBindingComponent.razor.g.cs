@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApplication1.Shared
+namespace WebApplication1.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,8 @@ using WebApplication1.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/twowayspinding")]
+    public partial class TwoWaysBindingComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,15 +91,15 @@ using WebApplication1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 48 "D:\BlazorServer App\WebApplication1\BlazorSchool\Shared\NavMenu.razor"
+#line 10 "D:\BlazorServer App\WebApplication1\BlazorSchool\Pages\TwoWaysBindingComponent.razor"
        
-    private bool collapseNavMenu = true;
+    private string name = "John Doe";
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string Name { get; set; }
 
-    private void ToggleNavMenu()
+    private void HandleNameChange(ChangeEventArgs e)
     {
-        collapseNavMenu = !collapseNavMenu;
+        name = e.Value.ToString();
     }
 
 #line default

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GLkURD7J3TZNTZexX/bAteUrZfsGeW7GEmIrY0S6I53vGFIfX93ehzDU1DTUkDLG2aylYkDi4tuf9zB7r8Mkng==",
+  "dgSpecHash": "5tdrUbXdplfXMqDl7UwyzVfbtES92tCB4q/I+u7QFR71PCZTSDeM0M/pHYLDvPFGFTN1pcbd5FfGCVR++zLLUA==",
   "success": true,
-  "projectFilePath": "D:\\BlazorServer App\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "D:\\BlazorServer App\\WebApplication1\\BlazorSchool\\WebApplication1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
