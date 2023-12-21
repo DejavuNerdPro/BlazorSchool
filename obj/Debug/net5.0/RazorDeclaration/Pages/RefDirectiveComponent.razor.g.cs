@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApplication1.Shared
+namespace WebApplication1.Pages
 {
     #line hidden
     using System;
@@ -82,7 +82,8 @@ using WebApplication1.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/refkeydownhandle")]
+    public partial class RefDirectiveComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,20 +91,41 @@ using WebApplication1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "D:\BlazorServer App\WebApplication1\BlazorSchool\Shared\NavMenu.razor"
+#line 19 "D:\BlazorServer App\WebApplication1\BlazorSchool\Pages\RefDirectiveComponent.razor"
        
-    private bool collapseNavMenu = true;
+    private string name = "John Doe";
+    private ElementReference nameInput;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string age = "45";
+    private ElementReference ageInput;
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    private ElementReference currentElement;
+
+    
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 34 "D:\BlazorServer App\WebApplication1\BlazorSchool\Pages\RefDirectiveComponent.razor"
+           
+
+private void HandleNameChange(ChangeEventArgs e)
+{
+    // Custom logic when the name changes
+    // For example, you can validate the input or perform other actions
+    name = e.Value.ToString();
+    currentElement = ageInput;
+    currentElement.FocusAsync();
+    nameInput.FocusAsync();
+}
+
+    
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
     }
 }
 #pragma warning restore 1591

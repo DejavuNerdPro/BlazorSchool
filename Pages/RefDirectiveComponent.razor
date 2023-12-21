@@ -1,0 +1,64 @@
+﻿@page "/refkeydownhandle"
+@inject IJSRuntime JSRuntime
+
+<h3>Two-Way Binding Example with Reference Directive</h3>
+
+@*<p>Enter your name: @name</p>
+    <input type="text" @bind="name" @ref="nameInput" @onkeydown="HandleKeyDown"/><br/>
+    <input type="text" @bind="age" @ref="ageInput" @onkeydown="HandleKeyDown"/>*@
+
+<p>Enter your name: @name @age</p>
+<input type="text" @bind="name" @ref="nameInput" />
+<br />
+<input type="text" @bind="age" @ref="ageInput" />
+
+<p>Hello, @name!</p>
+<br />
+<p>Current Element Reference ID : @currentElement.Id</p>
+
+@code {
+    private string name = "John Doe";
+    private ElementReference nameInput;
+
+    private string age = "45";
+    private ElementReference ageInput;
+
+    private ElementReference currentElement;
+
+    @*    protected override async Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
+
+            // Focus on the input element when the page loads
+            await Task.Run(async()=> await nameInput.FocusAsync());
+        }*@
+
+private void HandleNameChange(ChangeEventArgs e)
+{
+    // Custom logic when the name changes
+    // For example, you can validate the input or perform other actions
+    name = e.Value.ToString();
+    currentElement = ageInput;
+    currentElement.FocusAsync();
+    nameInput.FocusAsync();
+}
+
+    @*//on press enter focus on other tage
+        private async Task HandleKeyDown(KeyboardEventArgs e)
+        {
+            if (e.Key == "Enter")
+            {
+                // Prevent the default Enter key behavior (e.g., form submission)
+                await JSRuntime.InvokeVoidAsync("BlazorPreventDefault", e);  // rather than e.PreventDefault();
+
+                // Get the currently focused element
+                currentElement = await JSRuntime.InvokeAsync<ElementReference>("Blazor.focusElement");
+
+                // Set focus to the next input element
+                if (currentElement.Id == nameInput.Id)
+                {
+                    await ageInput.FocusAsync();
+                }
+            }
+        }*@
+}

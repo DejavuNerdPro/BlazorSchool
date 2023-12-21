@@ -131,3 +131,5 @@ D:\BlazorServer App\WebApplication1\BlazorSchool\obj\Debug\net5.0\WebApplication
 D:\BlazorServer App\WebApplication1\BlazorSchool\obj\Debug\net5.0\WebApplication1.csproj.CopyComplete
 D:\BlazorServer App\WebApplication1\BlazorSchool\obj\Debug\net5.0\RazorDeclaration\Pages\TwoWaysBindingComponent.razor.g.cs
 D:\BlazorServer App\WebApplication1\BlazorSchool\obj\Debug\net5.0\Razor\Pages\TwoWaysBindingComponent.razor.g.cs
+D:\BlazorServer App\WebApplication1\BlazorSchool\obj\Debug\net5.0\RazorDeclaration\Pages\RefDirectiveComponent.razor.g.cs
+D:\BlazorServer App\WebApplication1\BlazorSchool\obj\Debug\net5.0\Razor\Pages\RefDirectiveComponent.razor.g.cs
