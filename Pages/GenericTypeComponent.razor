@@ -1,0 +1,27 @@
+﻿@typeparam T
+
+<p>The value of the generic parameter is: @typeof(T).Name</p>
+
+<p>Instantiating SampleObject :</p>
+<p>@typeof(T).GetProperty("DisplayName") - Age: @typeof(T).GetProperty("Age")</p>
+<p>@typeof(T).GetProperty("DisplayName").GetValue(TInstance) - Age: @typeof(T).GetProperty("Age").GetValue(TInstance)</p>
+<p>@GetProperty("DisplayName",TInstance) - Age: @GetProperty("Age",TInstance)</p>
+
+@code {
+
+    // Instantiate an object of type T for illustration
+    [Parameter]
+    public T TInstance { get; set; } = Activator.CreateInstance<T>();
+
+    // Method to dynamically get property value using reflection
+    private object GetProperty(string propertyName, object obj)
+    {
+        var propertyInfo = typeof(T).GetProperty(propertyName);
+        if (propertyInfo != null)
+        {
+            return propertyInfo.GetValue(obj);
+        }
+        return null; // Handle the case where the property is not found
+    }
+
+}

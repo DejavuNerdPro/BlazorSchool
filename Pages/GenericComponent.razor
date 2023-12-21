@@ -1,0 +1,14 @@
+﻿@page "/generictypeparam"
+@using WebApplication1.Models;
+
+<h3>GenericComponent</h3>
+
+<GenericTypeComponent TInstance="@sampleObject" />
+
+@code{
+    private SampleObject sampleObject { get; set; } = new SampleObject()
+    {
+        DisplayName = "Anony",
+        Age = 12
+    };
+}

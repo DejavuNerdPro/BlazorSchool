@@ -1,0 +1,31 @@
+﻿<!--Directive Section-->
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@implements IDisposable
+@page "/initialDisposeStage"
+<!--UI Section-->
+<h3>InitializeAndDispose</h3>
+<div>Sample Text: @SampleText</div>
+<!--Code Section-->
+@code {
+    public string SampleText { get; set; } = "";
+
+    protected override void OnInitialized()
+    {
+        SampleText = "Blazor";
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    public void OnLocationChanged(object? sender, LocationChangedEventArgs eventArgs)
+    {
+        SampleText = "Blazor Location Changed";
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+        JSRuntime.InvokeVoidAsync("alert", "Disposed.");
+    }
+
+    //public async ValueTask DisposeAsync() => NavigationManager.LocationChanged -= OnLocationChanged;
+}

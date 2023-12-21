@@ -1,0 +1,20 @@
+﻿<!--Directive Section-->
+@page "/parameterStage"
+
+<!--UI Section-->
+<h2>Parameter Section Sets => @parameter</h2>
+<button @onclick="message">
+    Update Message
+</button>
+<!--Code Sesction-->
+@code{
+    public string parameter { get; set; } = "Initial Parameter";
+
+    private void message()
+    {
+        parameter = "Updated Text";
+
+        StateHasChanged();  // to refresh the state or to remind the component the parameter has changed.
+    }
+
+}
