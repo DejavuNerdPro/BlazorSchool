@@ -1,14 +1,20 @@
 ﻿@page "/twowayspinding"
 
-<h1>Two ways data binding </h1>
+<h1>Two ways data Binding </h1>
+<br/>
+<ruby>
+    <label>Name=@name</label><rt style="color:red;">using C# code</rt>
+</ruby>
 <input type="text" @bind="name" @oninput="HandleNameChange" />
 <br/>
-<label>Name = @Name</label>
+<ruby>
+    Name=<rt style="color:red;">using Directives</rt>@Name
+</ruby>
 <input @bind-value=Name @bind-value:event="oninput" />
 
 
 @code {
-    private string name = "John Doe";
+    private string name { get; set; } = "John Doe";
 
     private string Name { get; set; }
 

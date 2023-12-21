@@ -91,9 +91,9 @@ using WebApplication1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 10 "D:\BlazorServer App\WebApplication1\BlazorSchool\Pages\TwoWaysBindingComponent.razor"
+#line 16 "D:\BlazorServer App\WebApplication1\BlazorSchool\Pages\TwoWaysBindingComponent.razor"
        
-    private string name = "John Doe";
+    private string name { get; set; } = "John Doe";
 
     private string Name { get; set; }
 
